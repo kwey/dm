@@ -59,33 +59,6 @@ module.exports = env => {
                     },
                 ],
             },
-            {
-                test: /\.(png|jpg|gif|ttf|eot|woff)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: { limit: 819200 },
-                    },
-                ],
-            },
-            {
-                test: /\.svg$/,
-                use: [
-                    {
-                        loader: 'svgo-inline-loader',
-                        options: {
-                            plugins: [
-                                {
-                                    removeDimensions: true,
-                                },
-                                {
-                                    removeViewBox: false,
-                                },
-                            ],
-                        },
-                    },
-                ],
-            },
         ],
     }
 }

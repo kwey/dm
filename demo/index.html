@@ -14,23 +14,49 @@
                 width: 100%;
                 height: 100%;
             }
-            .dm {
-                width: 800px;
-                height: 600px;
-                margin: 0 auto;
+            .wrap {
+                position: relative;
+                width: 600px;
+                height: 400px;
+                margin: 20px auto;
                 background-color: #000;
-                overflow: hidden;
+                /* overflow: hidden; */
+            }
+            .btn {
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            button {
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
             }
         </style>
     </head>
     <body>
-        <div class="dm"></div>
+        <div class="wrap"></div>
+        <div class="btn">
+            <button class="play">play</button>
+            <button class="pause">pause</button>
+            <button class="toggle">toggle</button>
+
+        </div>
         <script src="../dist/dm.js"></script>
         <script>
-            new Dm({
-                container: document.querySelector('.dm'),
-                name: '123'
+            const dm = new Dm({
+                container: document.querySelector('.wrap'),
             })
+            document.querySelector('.play').addEventListener('click', () => {
+                dm.play()
+            })
+            document.querySelector('.pause').addEventListener('click', () => {
+                dm.pause()
+            })
+            document.querySelector('.toggle').addEventListener('click', () => {
+                dm.toggle()
+            })
+
         </script>
     </body>
 </html>

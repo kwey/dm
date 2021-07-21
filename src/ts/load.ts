@@ -28,7 +28,7 @@ export default class Load {
         for (let i = 0; i < num; i++) {
             list.push({
                 text: i + '我是一条弹幕',
-                stime: (stime + duration/num) * 1000,
+                stime: (stime + i* duration/num) * 1000,
                 fontsize: 25,
                 color: Load.color(),
                 opacity: Math.random() * 0.4 + 0.6,

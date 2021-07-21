@@ -5,7 +5,7 @@ import Zero from './ts/zero'
 
 export interface IConfig {
     container: HTMLElement
-    name: string
+    duration?: number
     prefix?: string
     metadata?: IData
 }
@@ -13,11 +13,15 @@ export interface IConfig {
 export default class Dm {
     static metadata = metadata
     private config: Required<IConfig>
-    zero!: Zero
+    private zero!: Zero
 
     constructor(config: IConfig) {
+        if (!config.container) {
+            throw new Error("no container");
+        }
         this.config = {
             metadata,
+            duration: 10000,
             prefix: 'dm',
             ...config
         }
@@ -26,5 +30,23 @@ export default class Dm {
 
     private init() {
         this.zero = new Zero(this.config)
+    }
+
+    /**
+     * 添加一组弹幕
+     * 暂未排序（因为生成弹幕已排序
+     */
+     addDm() {
+        this.zero.addDm()
+    }
+
+    play() {
+        this.zero.play()
+    }
+    pause() {
+        this.zero.pause()
+    }
+    toggle() {
+        this.zero.toggle()
     }
 }
