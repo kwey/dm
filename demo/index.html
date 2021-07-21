@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="icon" type="image/png" href="./icon.png" />
+        <title>Dm</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .dm {
+                width: 800px;
+                height: 600px;
+                margin: 0 auto;
+                background-color: #000;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="dm"></div>
+        <script src="../dist/dm.js"></script>
+        <script>
+            new Dm({
+                container: document.querySelector('.dm'),
+                name: '123'
+            })
+        </script>
+    </body>
+</html>
