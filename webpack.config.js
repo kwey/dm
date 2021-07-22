@@ -22,7 +22,7 @@ const smp = new SpeedMeasurePlugin()
 module.exports = (env, argv) => {
     const pro = env?.gcc
     let mode = pro ? 'production' : 'development'
-    let publicPath = pro ? 'http://localhost:9000/zero/dist/' : '/zero/dist/'
+    let publicPath = '/dist/'
 
     const config = {
         mode,
@@ -69,11 +69,11 @@ module.exports = (env, argv) => {
         },
 
         devServer: {
-            publicPath,
+            publicPath: '/demo/',
             compress: true,
             overlay: true,
             disableHostCheck: true,
-            port: 9090,
+            port: 9999,
             headers: {
                 'X-Custom-Header': 'yes',
                 'Access-Control-Allow-Origin': '*',

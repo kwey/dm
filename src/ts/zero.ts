@@ -139,6 +139,8 @@ export default class Zero {
         let currentTime: number = performance.now()
         const time = this.timeZero + currentTime - this.startTime
 
+        // console.log(this.timeZero, currentTime, this.startTime)
+
         this.timeZero = time
         this.startTime = currentTime
 
